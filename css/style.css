@@ -1,3 +1,4 @@
+/* Reset and Variables */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +15,7 @@
     --text-light: #666;
 }
 
+/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -383,6 +385,36 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    background: white;
+    border-radius: 15px;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -397,4 +429,40 @@ footer {
 
 .animate-on-scroll {
     animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
 }
